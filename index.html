@@ -8,25 +8,37 @@
     <script type="text/javascript">
       var pathSegmentsToKeep = 1;
       var l = window.location;
-      l.replace(
-        l.protocol +
-          "//" +
-          l.hostname +
-          (l.port ? ":" + l.port : "") +
-          l.pathname
-            .split("/")
-            .slice(0, 1 + pathSegmentsToKeep)
-            .join("/") +
-          "/?/" +
-          l.pathname
-            .slice(1)
-            .split("/")
-            .slice(pathSegmentsToKeep)
-            .join("/")
-            .replace(/&/g, "~and~") +
-          (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
-          l.hash,
-      );
+      (function () {
+        // Build the base (protocol + host + optional port)
+        var protocolHost =
+          l.protocol + "//" + l.hostname + (l.port ? ":" + l.port : "");
+
+        // Keep the first N segments as before
+        var keep = l.pathname
+          .split("/")
+          .slice(0, 1 + pathSegmentsToKeep)
+          .join("/");
+
+        // Encode each remaining path segment to safely include special chars like &
+        var restSegments = l.pathname
+          .slice(1)
+          .split("/")
+          .slice(pathSegmentsToKeep);
+        var encodedRest = restSegments
+          .map(function (s) {
+            return encodeURIComponent(s);
+          })
+          .join("/");
+
+        // Encode the search (query) string (without leading '?'), prefix with '&' to preserve original concatenation
+        var search = l.search
+          ? "&" + encodeURIComponent(l.search.slice(1))
+          : "";
+
+        var newUrl =
+          protocolHost + keep + "/?/" + encodedRest + search + l.hash;
+        l.replace(newUrl);
+      })();
     </script>
     <script type="module" crossorigin src="/react-todo-app/assets/main-BBj0FAmI.js"></script>
     <link rel="stylesheet" crossorigin href="/react-todo-app/assets/main-DIv3m2EN.css">
