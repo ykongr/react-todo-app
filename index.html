@@ -9,6 +9,10 @@
       var pathSegmentsToKeep = 1;
       var l = window.location;
       (function () {
+        // If we've already rewritten the URL (search begins with '?/'), do nothing to avoid double-encoding
+        if (l.search && l.search.slice(0, 2) === "?/") {
+          return;
+        }
         // Build the base (protocol + host + optional port)
         var protocolHost =
           l.protocol + "//" + l.hostname + (l.port ? ":" + l.port : "");
