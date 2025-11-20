@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@layer components {
+  .bg-gensin {
+    background-image: url('/gensin.jpg');
+    background-size: cover;
+    background-position: 25% 25%;
+    background-repeat: no-repeat;
+  }
+  
+  .bg-sutare {
+    background-image: url('/sutare.jpg');
+    background-size: cover;
+    background-position: 25% 25%;
+    background-repeat: no-repeat;
+  }
+  
+  .bg-meityou {
+    background-image: url('/meityou.jpg');
+    background-size: cover;
+    background-position: 25% 15%;
+    background-repeat: no-repeat;
+  }
+  
+  .font-name {
+    font-family: 'Shippori Mincho', serif;
+  }
+
+  .todo-text{
+    color: white;
+    -webkit-text-stroke: 2px black;
+    paint-order: stroke fill;
+  }
+
+}
