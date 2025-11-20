@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NOT FOUND</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script takes the current url and converts the path and query
+      // string into just a query string, and then redirects the browser
+      // to the new url with only a query string and hash fragment.
+      // For example, https://www.foo.tld/one/two?a=b&c=d#qwe becomes
+      // https://www.foo.tld/?/one/two&<encoded-query>#qwe where the
+      // query portion is URL-encoded (e.g. a=b&c=d -> a%3Db%26c%3Dd).
+      // Note: this 404.html file must be at least 512 bytes for it to work
+      // with Internet Explorer (it is currently > 512 bytes)
+
+      // If you're creating a Project Pages site and NOT using a custom domain,
+      // then set pathSegmentsToKeep to 1 (enterprise users may need to set it to > 1).
+      // This way the code will only replace the route part of the path, and not
+      // the real directory in which the app resides, for example:
+      // https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes
+      // https://username.github.io/repo-name/?/one/two&<encoded-query>#qwe
+      // (example encoded query: a=b&c=d -> a%3Db%26c%3Dd)
+      // Otherwise, leave pathSegmentsToKeep as 0.
+      var pathSegmentsToKeep = 1;
+
+      var l = window.location;
+      (function () {
+        // If we've already rewritten the URL (search begins with '?/'), do nothing to avoid double-encoding
+        if (l.search && l.search.slice(0, 2) === "?/") {
+          return;
+        }
+        var protocolHost =
+          l.protocol + "//" + l.hostname + (l.port ? ":" + l.port : "");
+        var keep = l.pathname
+          .split("/")
+          .slice(0, 1 + pathSegmentsToKeep)
+          .join("/");
+        var restSegments = l.pathname
+          .slice(1)
+          .split("/")
+          .slice(pathSegmentsToKeep);
+        var encodedRest = restSegments
+          .map(function (s) {
+            return encodeURIComponent(s);
+          })
+          .join("/");
+        var search = l.search
+          ? "&" + encodeURIComponent(l.search.slice(1))
+          : "";
+        var newUrl =
+          protocolHost + keep + "/?/" + encodedRest + search + l.hash;
+        l.replace(newUrl);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
