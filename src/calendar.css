@@ -1,0 +1,208 @@
+.calendar-container {
+  width: 100%;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #1f2937;
+  min-width: 12rem;
+  text-align: center;
+}
+
+.calendar-button {
+  padding: 0.5rem 1rem;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background-color 200ms;
+}
+
+.calendar-button:hover {
+  background-color: #2563eb;
+}
+
+.calendar-button:active {
+  background-color: #1d4ed8;
+}
+
+.calendar-today-button:hover {
+  background-color: #059669;
+}
+
+.calendar-today-button:active {
+  background-color: #047857;
+}
+
+.calendar {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0;
+  background-color: #f3f4f6;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.calendar-weekday {
+  text-align: center;
+  font-weight: bold;
+  color: #374151;
+  background-color: #f3f4f6;
+  border-right: 1px solid #e5e7eb;
+}
+
+.calendar-weekday:last-child {
+  border-right: none;
+}
+
+.calendar-weekday.sunday {
+  color: #ef4444;
+}
+
+.calendar-weekday.saturday {
+  color: #3b82f6;
+}
+
+.calendar-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.calendar-week:last-child {
+  border-bottom: none;
+}
+
+.calendar-day {
+  padding: 0.5rem;
+  height: 6rem;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  border-right: 1px solid #d1d5db;
+  cursor: default;
+  position: relative;
+}
+
+.calendar-day-number {
+  align-self: flex-start;
+}
+
+.calendar-day-games {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-self: flex-start;
+  width: 100%;
+}
+
+.game-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.2rem;
+  border-radius: 0.25rem;
+  color: white;
+  text-align: center;
+  width: 80%;
+}
+
+.game-label.gensin {
+  background-color: #fbbf24;
+  color: #78350f;
+}
+
+.game-label.starrail {
+  background-color: #a78bfa;
+  color: #3f0f5c;
+}
+
+.game-label.meiyou {
+  background-color: #60a5fa;
+  color: #003d82;
+}
+
+.calendar-day:hover {
+  background-color: #f9fafb;
+}
+
+.calendar-day:last-child {
+  border-right: none;
+}
+
+.calendar-day.other-month {
+  color: #d1d5db;
+  background-color: #f3f4f6;
+}
+
+.calendar-day.sunday {
+  color: #ef4444;
+}
+
+.calendar-day.saturday {
+  color: #3b82f6;
+}
+
+.calendar-day.today {
+  background-color: #fef3c7;
+  color: #111827;
+  font-weight: bold;
+  border: 1px solid #fcd34d;
+  border-radius: 0.25rem;
+}
+
+ .version-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .calendar-container {
+    padding: 0.75rem;
+  }
+
+  .calendar-day {
+    padding: 0.25rem;
+    height: 4rem;
+    font-size: 0.875rem;
+  }
+
+  .calendar-title {
+    font-size: 1.125rem;
+  }
+
+  .game-label {
+    font-size: 0.4rem;
+    padding: 0.2rem;
+  }
+  .calendar-day-number {
+    font-size: 0.6rem;
+  }
+  .version-label {
+    font-size: 0.35rem;
+  }
+}

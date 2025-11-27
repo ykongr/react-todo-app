@@ -14,7 +14,7 @@ const TodoList = (props: Props) => {
   if (todos.length === 0) {
     return (
       <div className="text-red-500">
-        現在、登録されているタスクはありません。
+        現在、登録されているキャラはいません。
       </div>
     );
   }
