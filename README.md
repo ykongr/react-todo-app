@@ -34,9 +34,9 @@ https://ykongr.github.io/react-todo-app
 
 ## 実行画像
 
-(./public/screen1.png)
-(./public/screen2.png)
-(./public/screen3.png)
+![画面1](./public/screen1.png)
+![画面2](./public/screen2.png)
+![画面3](./public/screen3.png)
 
 ## 開発期間
 
